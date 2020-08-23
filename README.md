@@ -31,4 +31,5 @@ php artisan migrate
 
 (crontabに１日ごとに実行してくれるようにする）
 crontab -e
+
 0 0 */1 * * php /var/www/(アプリ名）/artisan schedule:run
