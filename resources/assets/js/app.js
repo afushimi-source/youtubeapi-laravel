@@ -18,6 +18,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('get-video', require('./components/Video.vue'));
 Vue.component('channel', require('./components/Channel.vue'));
+Vue.component('finder', require('./components/Find.vue'));
 
 const app = new Vue({
     el: '#app'

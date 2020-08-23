@@ -1,9 +1,8 @@
 <template>
   <div class="small">
-    <p>{{names}}({{names.length}})</p>
-    <p>{{counts}}({{counts.length}})</p>
-    <bar-chart :chart-data="renderChart"></bar-chart>
     <button @click="fillData()">show</button>
+    <bar-chart :chart-data="renderChart"></bar-chart>
+    
   </div>
 </template>
 

@@ -1,4 +1,3 @@
-  
 <!doctype html>
 <html lang="ja">
 <head>
@@ -8,10 +7,9 @@
 </head>
 
 <body style="padding:10px;">
-  <h1>youtube/video/Index</h1>
-  <div id="app">
-    <get-video></get-video>
-  </div>
+  <h1>Index</h1>
+  <p>{{$id}}</p>
+  <p>{{$max}}</p>
   <script src="{{ mix('js/app.js') }}"></script>
 
 </body>

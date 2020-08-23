@@ -18,7 +18,9 @@ class VideoTable extends Migration
     	$table->string('video_id');
     	$table->string('title');
     	$table->date('date');
+    	$table->string('tag')->nullable();
     	$table->string('channel');
+    	$table->string('channel_id');
     	$table->integer('rank');
     	$table->string('iframe')->nullable();
     	$table->string('thumbnail')->nullable();

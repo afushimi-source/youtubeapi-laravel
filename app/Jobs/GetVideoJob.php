@@ -34,41 +34,71 @@ class GetVideoJob implements ShouldQueue
     public function handle()
     {
       $max = 50;
+      $tagIdList = array(
+          '1' => 'Film & Animation',
+          '2' => 'Autos & Vehicles',
+          '10' => 'Music',
+          '15' => 'Pets & Animals',
+          '17' => 'Sports',
+          '18' => 'Short Movies',
+          '19' => 'Travel & Events',
+          '20' => 'Gaming',
+          '21' => 'Videoblogging',
+          '22' => 'People & Blogs',
+          '23' => 'Comedy',
+          '24' => 'Entertainment',
+          '25' => 'News & Politics',
+          '26' => 'Howto & Style',
+          '27' => 'Education',
+          '28' => 'Science & Technology',
+          '29' => 'Nonprofits & Activism',
+          '30' => 'Movies',
+          '31' => 'Anime/Animation',
+          '32' => 'Action/Adventure',
+          '33' => 'Classics',
+          '34' => 'Comedy',
+          '35' => 'Documentary',
+          '36' => 'Drama',
+          '37' => 'Family',
+          '38' => 'Foreign',
+          '39' => 'Horror',
+          '40' => 'Sci-Fi/Fantasy',
+          '41' => 'Thriller',
+          '42' => 'Shorts',
+          '43' => 'Shows',
+          '44' => 'Trailers',
+          
+          );
       $datas = Youtube::getPopularVideos('jp',$max);
       $i=0;
       foreach($datas as $data){
         $i++;
         $video = new Video;
         $video->video_id = $data->id;
-        if(isset($data->id)){
-            $video->video_id = $data->id;
-        }else{
-            $video->video_id = 0;
-        }
+        $video->video_id = $data->id;
         $video->date = date("Y-m-d");
+        $video->tag = $tagIdList[$data->snippet->categoryId];
         $video->title = $data->snippet->title;
         $title = $data->snippet->channelTitle;
-        print($video->video_id);
         $video->channel = $title;
+        $video->channel_id = $data->snippet->channelId;
         $channel = Channel::where('name',$title)->first();
-
         if(empty($channel))
         {
             $channel = new Channel;
             $channel->name = $title;
             $channel->count_rankIn = 1;
+            $channel->channel_id = $data->snippet->channelId;
         }
         else
         {
             $channel = Channel::where('name',$title)->first();
-            $channel->id = $channel->id;
-            $channel->name = $channel->name;
             $channel->count_rankIn = $channel->count_rankIn + 1;
         }
         $channel->save();
         $video->rank = $i;
         $video->iframe = $data->player->embedHtml;
-        $video->thumbnail = $data->snippet->thumbnails->default->url;
+        $video->thumbnail = $data->snippet->thumbnails->high->url;
         $video->viewCount = $data->statistics->viewCount;
         if(isset($data->statistics->likeCount)){
             $video->likeCount = $data->statistics->likeCount;
