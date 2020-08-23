@@ -1,4 +1,4 @@
-# youtube-laravel+vue
+# youtubeapi-laravel
 this application is colllecting datas of youtube.
 
 このアプリは毎日０時に急上昇というその時に人気のある動画を５０件取得し、DBに格納します。
