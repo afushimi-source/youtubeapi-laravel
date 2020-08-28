@@ -21978,7 +21978,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(151);
-module.exports = __webpack_require__(196);
+module.exports = __webpack_require__(199);
 
 
 /***/ }),
@@ -22005,7 +22005,7 @@ window.Vue = __webpack_require__(172);
 Vue.component('example-component', __webpack_require__(176));
 Vue.component('get-video', __webpack_require__(179));
 Vue.component('channel', __webpack_require__(185));
-Vue.component('finder', __webpack_require__(206));
+Vue.component('finder', __webpack_require__(196));
 
 var app = new Vue({
   el: '#app'
@@ -66021,7 +66021,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var axios = __webpack_require__(3);
 var yesterday = new Date();
-yesterday.setDate(yesterday.getDate());
+yesterday.setDate(yesterday.getDate() - 1);
 var date = yesterday.getFullYear() + "-" + (yesterday.getMonth() + 1) + "-" + yesterday.getDate();;
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -83094,29 +83094,14 @@ if (false) {
 
 /***/ }),
 /* 196 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(4)
 /* script */
-var __vue_script__ = __webpack_require__(207)
+var __vue_script__ = __webpack_require__(197)
 /* template */
-var __vue_template__ = __webpack_require__(208)
+var __vue_template__ = __webpack_require__(198)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -83155,7 +83140,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 207 */
+/* 197 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83208,7 +83193,7 @@ var axios = __webpack_require__(3);
 });
 
 /***/ }),
-/* 208 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -83272,6 +83257,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7e09dc20", module.exports)
   }
 }
+
+/***/ }),
+/* 199 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

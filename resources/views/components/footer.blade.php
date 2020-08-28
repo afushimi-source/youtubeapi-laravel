@@ -15,6 +15,6 @@
   <a href="/youtube/video">video</a>
   <a href="/youtube/channel">channel</a>
   <a href="/youtube/find">find</a>
-  <a href="https://laravel.com/docs">description</a>
+  <a href="/description">description</a>
   <hr>
 </footer>

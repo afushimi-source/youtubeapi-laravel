@@ -27,7 +27,7 @@
 <script>
     const axios = require('axios');
     var yesterday = new Date();
-    yesterday.setDate(yesterday.getDate());
+    yesterday.setDate(yesterday.getDate() - 1);
     var date = yesterday.getFullYear() + "-" + (yesterday.getMonth() + 1) + "-" + yesterday.getDate();;
     export default {
          mounted() {

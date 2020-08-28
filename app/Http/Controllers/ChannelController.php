@@ -46,6 +46,6 @@ class ChannelController extends Controller
       'list_thumbnail' => $list_thumbnails,
       'list_title' => $list_title,
       );
-    return view('channel.detail',$data);
+    return view('youtube.channel.detail',$data);
   }
 }
