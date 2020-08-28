@@ -17,18 +17,30 @@ this application is colllecting datas of youtube.
 
 インストール方法
 git clone https://github.com/afushimi-source/youtube-laravel-vue.git
+
 composer install
+
 npm i
+
 npm run dev
+
 php artisan key:generate
+
 .envファイルでDB情報を記述
+
 .envファイルにYOUTUBE_API＿KEYの記述
+
 ※https://github.com/alaouy/Youtube
+
 (アプリケーション内で）
-chmod -R 775 /storage
-chmod -R 775 /bootstrap/cache
+
+chmod -R 775 storage
+
+chmod -R 775 bootstrap/cache
+
 php artisan migrate
 
 (crontabに１日ごとに実行してくれるようにする）
 crontab -e
+
 0 0 */1 * * php /var/www/(アプリ名）/artisan schedule:run
